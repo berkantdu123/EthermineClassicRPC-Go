@@ -1,0 +1,6 @@
+config:
+  updateTime: 2
+  minerID: ""
+  clientID: ""
+  LargeImage: ""
+  LargeImageText: ""
