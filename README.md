@@ -1,7 +1,7 @@
 # EthermineRPC-Go
 Discord Rich Presence for https://ethermine.org/ written in Go
 
-![EthermineRPC Example](https://i.jaffasite.ga/2021/04/etherminerpc-go.png)
+![EthermineRPC Example](https://ipfs.io/ipfs/QmPQ9ZptPCokGW2LiZqzd9n2VgEe7kwXT3edqaa45gr4bX?filename=etherminerpc-go.png)
 
 ## Configuration
 Edit config.yaml as follows:
