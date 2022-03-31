@@ -1,3 +1,6 @@
+DOING WIKI BACK WIP - FORKER
+ORIGINAL PROJECT https://github.com/dwilliamsuk/EthermineRPC-Go
+
 # EthermineRPC-Go
 Discord Rich Presence for https://ethermine.org/ written in Go
 
@@ -13,7 +16,8 @@ Edit config.yaml as follows:
 | clientID | Your RPC Client ID (Check Important Notes) |
 | LargeImage | RPC Art Asset Name To Use (Check Important Notes) |
 | LargeImageText | Large Image Asset Text |
-
+| SmallImage | Small image under the big one |
+| SmallImageText | Small Image Asset Text |
 ## Usage
 
 ```bash
