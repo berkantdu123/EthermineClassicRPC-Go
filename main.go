@@ -36,6 +36,7 @@ func init() {
 	LargeImageText = viper.GetString("config.LargeImageText")
 	SmallImage = viper.GetString("config.SmallImage")
 	SmallImageText = viper.GetString("config.SmallImageText")
+	fmt.Println("-- EthermineRPC By Dan (https://github.com/TheJaffaMeme) -- --Forked by Hectarox#5903 (not worth the link) -- ")
 	fmt.Println("-- Femboys are <3 UwU -- ")
 }
 
