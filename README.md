@@ -5,7 +5,7 @@ ORIGINAL PROJECT https://github.com/dwilliamsuk/EthermineRPC-Go
 # EthermineRPC-Go
 Discord Rich Presence for https://ethermine.org/ written in Go
 
-![EthermineRPC Example](![image](https://user-images.githubusercontent.com/52573108/161124042-88ad3b05-0ec6-45fb-9846-356e24e307c6.png))
+![EthermineRPC Example]![image](https://user-images.githubusercontent.com/52573108/161124175-1d204f48-a5f5-4b5e-b5c2-8e9bf8ea412a.png)
 
 ## Configuration
 Edit config.yaml as follows:
