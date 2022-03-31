@@ -18,6 +18,8 @@ var (
 	clientID       string
 	LargeImage     string
 	LargeImageText string
+	SmallImage     string
+	SmallImageText string
 )
 
 func init() {
@@ -32,7 +34,9 @@ func init() {
 	clientID = viper.GetString("config.clientID")
 	LargeImage = viper.GetString("config.LargeImage")
 	LargeImageText = viper.GetString("config.LargeImageText")
-	fmt.Println("-- EthermineRPC By Dan (https://github.com/TheJaffaMeme) -- ")
+	SmallImage = viper.GetString("config.SmallImage")
+	SmallImageText = viper.GetString("config.SmallImageText")
+	fmt.Println("-- Femboys are <3 UwU -- ")
 }
 
 func main() {
@@ -41,13 +45,13 @@ func main() {
 		panic(err)
 	}
 
-	ethAmount := getEthermineMonies()
-	usdAmount := getEthPricing(ethAmount)
+	etcAmount := getEthermineMonies()
+	usdAmount := getEtcPricing(etcAmount)
 
-	ethAmountStr := fmt.Sprintf("%.5f", ethAmount)
+	etcAmountStr := fmt.Sprintf("%.5f", etcAmount)
 	usdAmountStr := fmt.Sprintf("%.2f", usdAmount)
 
-	fmt.Println("ETH = " + ethAmountStr)
+	fmt.Println("ETC = " + etcAmountStr)
 	fmt.Println("USD = " + usdAmountStr)
 
 	now := time.Now()
@@ -55,9 +59,11 @@ func main() {
 
 	err = client.SetActivity(client.Activity{
 		State:      usdAmountStr + " USD",
-		Details:    ethAmountStr + " ETH",
+		Details:    etcAmountStr + " ETC",
 		LargeImage: LargeImage,
 		LargeText:  LargeImageText,
+		SmallImage: SmallImage,
+		SmallText: SmallImageText,
 		Timestamps: &client.Timestamps{
 			Start: &now,
 			End:   &later,
@@ -80,7 +86,7 @@ func owie() {
 }
 
 func getEthermineMonies() float64 {
-	url := "https://api.ethermine.org/miner/" + minerID + "/dashboard"
+	url := "https://api-etc.ethermine.org/miner/" + minerID + "/dashboard"
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		owie()
@@ -100,8 +106,8 @@ func getEthermineMonies() float64 {
 	return unpaidmonies
 }
 
-func getEthPricing(eth float64) float64 {
-	url := "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD"
+func getEtcPricing(etc float64) float64 {
+	url := "https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USD"
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		owie()
@@ -116,7 +122,7 @@ func getEthPricing(eth float64) float64 {
 		owie()
 	}
 	resp := string(body)
-	ethtousd := gjson.Get(resp, "USD").Num
-	ethinusd := eth * ethtousd
-	return ethinusd
+	etctousd := gjson.Get(resp, "USD").Num
+	etcinusd := etc * etctousd
+	return etcinusd
 }
